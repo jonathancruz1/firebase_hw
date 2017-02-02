@@ -2,10 +2,11 @@
 
 <html lang="en-us">
 
-  <head>
+<head>
 
-    <meta charset="UTF-8">
-    <title>Employee Tracker</title>
+  <meta charset="UTF-8">
+
+  <title>Example of Time Telling</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -15,42 +16,41 @@
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 
-    <!-- Moment.js Reference -->
-    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+    <!-- Added Moment JS -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- Employee Tracker -->
+<!-- Employee Tracker -->
     <div class="container">
 
       <!-- Jumbotron -->
-      <div class="jumbotron" style="background-color: black; color: white">
-        <h1 class="text-center">Employee Data Management</h1>
-        <h3 class="text-center">A Comprehensive Directory of Employee Billable Hours</h3>
+      <div class="jumbotron" style="background-color: #172e81; color: white">
+        <h1 class="text-center">Jonathan's Train App</h1>
+        <h3 class="text-center">#SoExcitedItWorks</h3>
       </div>
 
       <div class="row">
 
         <div class="col-lg-12">
 
-        <!-- Current Employees-->
+        <!-- Current Trains-->
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title"><strong>Current Employees</strong></h3>
+              <h3 class="panel-title"><strong>Current Train Schedule</strong></h3>
             </div>
             <div class="panel-body">
-              <table class="table table-hover" id='employee-table'>
+              <table class="table table-hover" id='train-table'>
                 <thead>
                   <tr>
-                    <th>Employee Name</th>
-                    <th>Role</th>
-                    <th>Start Date</th>
-                    <th>Months Worked</th>
-                    <th>Monthly Rate ($)</th>
-                    <th>Total Billed ($)</th>
+                    <th>Train Name</th><!-- Employee Name-->
+                    <th>Destination</th><!-- Role-->
+                    <th>Frequency (min)</th><!-- Start Date-->
+                    <th>Next Arrival</th><!-- Months Worked -->
+                    <th>Minutes Away</th><!-- Monthly Rate -->
+                    <!-- <th>Total Billed ($)</th> -->
                   </tr>
                 </thead>
                 <tbody>
@@ -59,32 +59,32 @@
             </div>
           </div>
 
-          <!-- Add Employee  -->
+          <!-- Add Train  -->
           <div class="panel panel-primary">
             <div class="panel-heading">
-              <h3 class="panel-title"><strong>Add Employee</strong></h3>
+              <h3 class="panel-title"><strong>Add Train</strong></h3>
             </div>
             <div class="panel-body">
 
               <!-- Entry Form -->
               <form>
                 <div class="form-group">
-                  <label for="employee-name-input">Employee Name</label>
-                  <input class="form-control" id="employee-name-input" type="text">
+                  <label for="train-name-input">Train Name</label><!--Employee Name-->
+                  <input class="form-control" id="train-name-input" type="text">
                 </div>
                 <div class="form-group">
-                  <label for="role-input">Role</label>
-                  <input class="form-control" id="role-input" type="text">
+                  <label for="destination-input">Destination</label>
+                  <input class="form-control" id="destination-input" type="text">
                 </div>
                 <div class="form-group">
-                  <label for="start-input">Start Date (DD/MM/YY - ex: 01/01/89)</label>
-                  <input class="form-control" id="start-input" type="text">
+                  <label for="first-train-time-input">First Train Time (HH:mm - military time) (DD/MM/YY - ex: 01/01/89)</label><!--Start Date (DD/MM/YY - ex: 01/01/89)-->
+                  <input class="form-control" id="first-train-time-input" type="text">
                 </div>
                 <div class="form-group">
-                  <label for="rate-input">Monthly Rate</label>
-                  <input class="form-control" id="rate-input" type="text">
+                  <label for="frequency-input">Frequency (min)</label>
+                  <input class="form-control" id="frequency-input" type="text">
                 </div>
-                <button class="btn btn-primary" id="add-employee-btn" type="submit">Submit</button>
+                <button class="btn btn-primary" id="add-train-btn" type="submit">Submit</button>
               </form>
 
             </div>
@@ -97,9 +97,8 @@
 
     </div>
 
-    <!-- Javascript -->
-    <script src="timesheetLogic.js"></script>
+  <script src="train.js"></script>
 
-  </body>
+</body>
 
 </html>
